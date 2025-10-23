@@ -1,18 +1,25 @@
-Features
-Generate RSA key pairs (public/private keys)
-Issue certificates with a validity period
-Verify certificates for authenticity and expiration
-Access control for different users per module
-Logs all API access attempts
-Proper error handling for invalid input or server errors
-Tech Stack
-Node.js
-Express.js
-Crypto (built-in Node.js module)
-File system for logging
-Git/GitHub for version control
-Installation
+# Certificate System
+
+## Features
+- Generate RSA key pairs (public/private keys)
+- Issue certificates with a validity period
+- Verify certificates for authenticity and expiration
+- Access control for different users per module
+- Logs all API access attempts
+- Proper error handling for invalid input or server errors
+
+## Tech Stack
+- Node.js
+- Express.js
+- Crypto (built-in Node.js module)
+- File system for logging
+- Git/GitHub for version control
+
+## Installation
+
 Clone the repository:
+
+```bash
 git clone https://github.com/YOUR_USERNAME/certificate-system.git
 cd certificate-system
 Install dependencies:
@@ -28,7 +35,7 @@ Method	Endpoint	Description
 GET	/certificate/generate-key	Generate public/private keys
 POST	/certificate/issue	Issue a certificate (body: { data, validity })
 POST	/certificate/verify	Verify a certificate (body: { cert })
-Example request body for issuing certificate:
+Example request body for issuing a certificate:
 {
   "data": { "user": "xyz", "role": "dev" },
   "validity": 5
