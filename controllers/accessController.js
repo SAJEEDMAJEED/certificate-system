@@ -1,6 +1,12 @@
 const fs = require('fs');
 const path = require('path');
-const logPath = path.join(__dirname, '../logs/apiLogs.txt');
+
+const logDir = path.join(__dirname, '../logs');
+const logPath = path.join(logDir, 'apiLogs.txt');
+
+if (!fs.existsSync(logDir)) {
+  fs.mkdirSync(logDir, { recursive: true });
+}
 
 const userAccess = {
   user1: ['module1', 'module2'],
